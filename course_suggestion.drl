@@ -1,0 +1,32 @@
+package drools_exercise.drools_proj;
+
+import com.drools.facts.Subject;
+import com.drools.facts.Course;
+import com.drools.facts.CourseList;
+
+global CourseList courses;
+
+rule "Suggest Computer Science"
+when
+    Subject( subject=="math", rating >= 6)
+    Subject( subject=="software", rating >= 9)
+    Subject( subject=="electronics", rating >= 3)
+then
+    courses.addCourse("COMP-SCI");
+end
+
+rule "Suggest Theoretical Physics"
+when
+    Subject( subject=="math", rating >= 9)
+    Subject( subject=="physics", rating >= 9)
+then
+    courses.addCourse("THEOR-PHYS");
+end
+
+rule "Suggest Theatrical Arts"
+when
+    Subject( subject=="arts", rating >= 9)
+    Subject( subject=="social_studies", rating >= 6)
+then
+    courses.addCourse("THEAT-ART");
+end

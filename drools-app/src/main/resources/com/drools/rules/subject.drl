@@ -1,0 +1,29 @@
+package com.drools.rules
+
+import com.drools.facts.Subject;
+import com.drools.facts.Course;
+
+rule "Suggest Computer Science"
+when
+    Subject( subject=="math", rating >= 6)
+    Subject( subject=="software", rating >= 9)
+    Subject( subject=="electronics", rating >= 3)
+then
+    insert(new Course("COMP-SCI"));
+end
+
+rule "Suggest Theoretical Physics"
+when
+    Subject( subject=="math", rating >= 9)
+    Subject( subject=="physics", rating >= 9)
+then
+    insert(new Course("THEOR-PHYS"));
+end
+
+rule "Suggest Theatrical Arts"
+when
+    Subject( subject=="arts", rating >= 9)
+    Subject( subject=="social_studies", rating >= 6)
+then
+    insert(new Course("THEAT-ART"));
+end
