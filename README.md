@@ -9,7 +9,7 @@ This application is a web service using Spring.
 - Install [Wildfly](https://docs.jboss.org/author/display/WFLY8/Getting+Started+Guide) (application server)
 - [Setup Drools Workbench](https://docs.jboss.org/drools/release/6.0.0.Final/drools-docs/html/wb.Workbench.html)
 - Generate jar from drools-facts module
-    ```sh
+    ```
     $ mvn clean install
     ```
 - Upload/Add generated JAR file in Artifact Repository of Drools Workbench
