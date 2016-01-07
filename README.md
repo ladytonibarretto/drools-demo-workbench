@@ -2,7 +2,7 @@ Drools Demo
 ===
 
 Course planner application for demonstrating Drools use-cases and configuration.
-This drools demo version uses Drools Workbench containing the rules file to be used for the application.
+This drools demo version uses a remote-based rules file thru the use of Drools Workbench (Wildfly as app server).
 This application is a web service using Spring.
 
 ## Install/Setup Drools Workbench
