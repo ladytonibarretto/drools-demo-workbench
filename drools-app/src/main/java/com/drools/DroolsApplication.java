@@ -36,8 +36,8 @@ public class DroolsApplication {
         final KieServices kieService = KieServices.Factory.get();
         final KieRepository kieRepo = kieService.getRepository();
         final UrlResource urlResource = (UrlResource) kieService.getResources().newUrlResource(url);
-        urlResource.setUsername("adminadmin");
-        urlResource.setPassword("pass1234");
+        urlResource.setUsername(env.getProperty("workbench.username"));
+        urlResource.setPassword(env.getProperty("workbench.password"));
         urlResource.setBasicAuthentication("enabled");
         final InputStream is = urlResource.getInputStream();
         final KieModule kieModule = kieRepo.addKieModule(kieService.getResources().newInputStreamResource(is));
